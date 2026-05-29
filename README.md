@@ -1,86 +1,58 @@
 # Task Tracker CLI
-
-A simple Command Line Interface (CLI) task tracker built with Python.
-
-This project allows users to manage tasks directly from the terminal without using a graphical interface.
-
----
-
-# Features
-
+A simple command-line application built with Python for managing daily tasks directly from the terminal.
+Tasks are stored locally in a JSON file and support basic operations such as adding, updating, deleting, and tracking task status.
+## Features
 - Add new tasks
 - Update existing tasks
 - Delete tasks
-- Mark tasks as:
-  - todo
-  - in-progress
-  - done
+- Mark tasks as `todo`, `in-progress`, or `done`
 - List all tasks
 - Filter tasks by status
-- Store data in a JSON file
-- Automatic JSON file creation
-- Edge case handling
-
----
-
-# Technologies Used
-
-- Python
-- JSON
-- File Handling
-- Command Line Arguments (sys.argv)
-
----
-
-# Project Structure
-
+- Automatic JSON file creation on first run
+- Persistent task storage using JSON
+## Project Structure
+```
 task-tracker/
 │
 ├── main.py
-└── tasks.json
----
-
-# How To Run
-
-Open terminal inside the project folder.
-
-## Add Task
-
+├── tasks.json
+├── README.md
+└── .gitignore
+```
+## Requirements
+- Python 3.x
+- No external libraries required
+## Installation
+```bash
+git clone https://github.com/Xepehrab/task-tracker-cli
+cd task-tracker-cli
+```
+## Usage
+```bash
+# Add a task
 python main.py add "Study Python"
----
-
-## List Tasks
-
+# List all tasks
 python main.py list
----
-
-## List Done Tasks
-
+# List tasks by status (todo | in-progress | done)
 python main.py list done
----
-
-## Update Task
-
+# Update a task
 python main.py update 1 "Study Machine Learning"
----
-
-## Delete Task
-
+# Delete a task
 python main.py delete 1
----
-
-## Mark Task As Done
-
+# Mark task as done
 python main.py mark-done 1
----
-
-## Mark Task As In Progress
-
+# Mark task as in progress
 python main.py mark-in-progress 1
----
+```
+## Task Statuses
+| Status        | Description                   |
+|---------------|-------------------------------|
+| `todo`        | Task has not been started     |
+| `in-progress` | Task is currently in progress |
+| `done`        | Task is completed             |
 
-# Example JSON Data
-
+## Example Data
+```json
 [
     {
         "id": 1,
@@ -90,36 +62,4 @@ python main.py mark-in-progress 1
         "updatedAt": "2026-05-27 11:00:00"
     }
 ]
----
-
-# Concepts Practiced
-
-This project helped practice:
-
-- Python functions
-- Lists and dictionaries
-- List comprehensions
-- JSON handling
-- File handling
-- Error handling
-- CRUD operations
-- CLI application development
-
----
-
-# Future Improvements
-
-Possible future upgrades:
-
-- Colorful terminal output
-- Due dates
-- Task priorities
-- Search functionality
-- SQLite database support
-- Interactive menu system
-
----
-
-# Author
-
-Sepehr Abrishamchi
+```
