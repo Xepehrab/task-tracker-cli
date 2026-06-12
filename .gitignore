@@ -1,2 +1,6 @@
-__pychache__/
+__pycache__/
 *.pyc
+task.json
+.pytest_cache/
+venv/
+.env
